@@ -24,5 +24,10 @@ then
 	echo "Usage: problem number"
 	exit
 fi
-cd "problem_$1" && cargo run --release && cd ..
+cd problem_$1 && cargo build --release && cd ..
+cd "problem_$1/target/release/"
+START=$(($(date +%s%N)))
+./problem_$1
+END=$(($(date +%s%N)))
+echo "It took $(($END - $START)) nanoseconds"
 

@@ -1,26 +1,17 @@
-use std::cmp;
-use std::time::Instant;
-fn sum(numbers: Vec<i32>, limit: i32) -> i32{
-    let mut sum: i32 = 0;
-    let (first, second)  = (numbers[0], numbers[1]);
-    let mut i: i32 = cmp::min(first, second);
-    while i < limit {
-        if(i % first == 0) || (i % second == 0){
-            sum += i;
-        }
-        i += 1;
-    }
-    return sum;
+
+
+fn sum_multiples(multiple:i64, limit: i64) -> i64 {
+    let count = limit / multiple;
+    return multiple * count * (count + 1) / 2;
 }
 
 fn main() {
-    let now = Instant::now();
+    // let now = Instant::now();
+    let answer = sum_multiples(3,999) + sum_multiples(5,999) - sum_multiples(15,999);
     {
-        println!("The sum of 3 or 5 multiples : {}"
-                , sum(vec![3,5], 1000));
+        println!("{}", answer);
     }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64)
-                + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+/*     let elapsed = now.elapsed(); */
+    /* let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0); */
+
 }
