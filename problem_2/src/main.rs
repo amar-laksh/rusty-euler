@@ -3,7 +3,7 @@ fn sum_evenfib(limit: i64) -> i64 {
     while d < limit {
         sum += d;
         _c = a + (2 * b);
-        d = (2 * a) + (3 * b);
+        d = (2 * _c) - b;
         b = d;
         a = _c;
     }
