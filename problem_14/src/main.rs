@@ -1,9 +1,8 @@
-use std::time::Instant;
 fn _hailstone(mut n: i64) -> i64 {
     let mut p: i64;
     let mut c: i64 = 1;
     loop {
-        p = if n % 2 == 0 { n/2 } else { ( (3*n) + 1) / 2 };
+        p = if n % 2 == 0 { n / 2 } else { ((3 * n) + 1) / 2 };
         if p == 1 {
             c += 1;
             break;
@@ -30,16 +29,6 @@ fn series(limit: i64) -> i64 {
     return number;
 }
 
-
-
-
 fn main() {
-    let now = Instant::now();
-    {
-        println!("The number is: {}", series(1_000_000));
-    }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64)
-                + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+    println!("{}", series(1_000_000));
 }

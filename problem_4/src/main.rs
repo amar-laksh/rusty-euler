@@ -1,4 +1,3 @@
-use std::time::Instant;
 fn prev_multiple(mut number: i64, divisor: i64, decrement: i64) -> i64 {
     let mut result: i64 = 0;
     while number > divisor {
@@ -52,11 +51,5 @@ fn largest_palindrome(len: u32) -> i64 {
 }
 
 fn main() {
-    let now = Instant::now();
-    {
-        println!("largest palindrome is: {}", largest_palindrome(2));
-    }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+    println!("{}", largest_palindrome(2));
 }

@@ -1,5 +1,3 @@
-use std::time::Instant;
-
 fn is_prime(number: i64) -> bool {
     let mut i: i64 = 3;
     if number == 2 {
@@ -35,14 +33,5 @@ fn largest_prime_factor(limit: i64) -> i64 {
 }
 
 fn main() {
-    let now = Instant::now();
-    {
-        println!(
-            "largest prime factor of 600851475143 is: {}",
-            largest_prime_factor(600851475143)
-        );
-    }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+    println!("{}", largest_prime_factor(600851475143));
 }

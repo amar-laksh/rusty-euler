@@ -11,8 +11,5 @@ fn sum_evenfib(limit: i64) -> i64 {
 }
 
 fn main() {
-    println!(
-        "{}",
-        sum_evenfib(4000001)
-    );
+    println!("{}", sum_evenfib(4000001));
 }

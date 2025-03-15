@@ -1,5 +1,3 @@
-use std::time::Instant;
-
 const INPUT: &'static str = r"
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
@@ -104,18 +102,15 @@ const INPUT: &'static str = r"
 ";
 
 fn digits_of_sum() -> String {
-    return INPUT.trim().lines().map(|line| &line[0..12])
-            .filter_map(|s| s.parse::<u64>().ok())
-            .sum::<u64>().to_string()[0..10].to_string();
+    return INPUT
+        .trim()
+        .lines()
+        .map(|line| &line[0..12])
+        .filter_map(|s| s.parse::<u64>().ok())
+        .sum::<u64>()
+        .to_string()[0..10]
+        .to_string();
 }
 fn main() {
-    let now = Instant::now();
-    {
-        println!("The first ten digits of the sum is : {}"
-                , digits_of_sum());
-    }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64)
-                + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+    println!("{}", digits_of_sum());
 }

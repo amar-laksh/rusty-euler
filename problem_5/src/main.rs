@@ -1,4 +1,3 @@
-use std::time::Instant;
 fn is_divisible(n: i64, limit: i64) -> bool {
     let mut i: i64 = if n % 2 == 0 { 3 } else { 2 };
     while i < limit {
@@ -21,11 +20,5 @@ fn smallest_divisible(limit: i64) -> i64 {
 }
 
 fn main() {
-    let now = Instant::now();
-    {
-        println!("smallest number divisible is: {}", smallest_divisible(20));
-    }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64) + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+    println!("{}", smallest_divisible(20));
 }

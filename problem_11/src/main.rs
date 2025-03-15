@@ -1,5 +1,3 @@
-use std::time::Instant;
-
 fn product(index: i64, limit: i64) -> i64 {
     let number: Vec<i64> = get_number();
     let mut prod: i64 = 1;
@@ -58,13 +56,6 @@ fn product(n: i64) -> i64 {
 
 
 fn main() {
-    let now = Instant::now();
-    {
-        println!("The product is: {}"
-                ,product());
-    }
-    let elapsed = now.elapsed();
-    let sec = (elapsed.as_secs() as f64)
-                + (elapsed.subsec_nanos() as f64 / 1000_000_000.0);
-    println!("Time taken: {} seconds", sec);
+    println!("{}"
+            ,product()); 
 }
